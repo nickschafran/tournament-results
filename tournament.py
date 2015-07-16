@@ -17,7 +17,7 @@ def deleteMatches():
     conn = connect()
     # Opens a cursor
     cur = conn.cursor()
-    # Execute query from tournament.db
+    # Execute query from tournament.sql
     cur.execute(
         "delete from matches;"
         )
