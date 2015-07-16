@@ -125,7 +125,6 @@ def swissPairings():
         id2: the second player's unique id
         name2: the second player's name
     """
-
     # store results of playerStandings() in a variable
     standings = playerStandings()
     # zip together lists of even & odd players extracted from playerStandings()
@@ -134,3 +133,4 @@ def swissPairings():
     pairings = [(even[0], even[1], odd[0], odd[1]) 
                 for even, odd in list(zipped)]
     return pairings
+
