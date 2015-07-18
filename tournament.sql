@@ -1,9 +1,7 @@
 /*
-
 tournament.sql -- creates db & establishes schema for Swiss-sytem tournament
 
 Author: Nicholas Schafran, July 2015
-
 */
 
 -- drop previously created tournament database
@@ -52,4 +50,3 @@ CREATE VIEW standings AS
     LEFT JOIN wins ON players.id = wins.id
     LEFT JOIN plays ON players.id = plays.id
     ORDER BY wins DESC;
-    
