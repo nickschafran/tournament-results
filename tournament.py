@@ -127,6 +127,6 @@ def swissPairings():
     # zip together lists of even & odd players extracted from playerStandings()
     zipped = zip(standings[::2], standings[1::2])
     # create list of only ids and names from zipped, pair each up in one tuple
-    pairings = [(even[0], even[1], odd[0], odd[1]) 
+    pairings = [(even[0], even[1], odd[0], odd[1])
                 for even, odd in list(zipped)]
     return pairings
