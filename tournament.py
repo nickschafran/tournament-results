@@ -2,9 +2,8 @@
 #
 # tournament.py -- implementation of a Swiss-system tournament
 #
-# Nicholas Schafran
+# Author: Nicholas Schafran, July 2015
 #
-# July 2015
 
 
 import psycopg2
