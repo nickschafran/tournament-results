@@ -2,9 +2,9 @@
 This repository contains a PostgreSQL database schema and python module utilizing Psycopg to serve an application for a [Swiss-style tournament](http://www.wizards.com/dci/downloads/swiss_pairings.pdf). It is a submission for Project 2 in [Udacity’s Full Stack Web Developer Nanodegree](https://www.udacity.com/course/full-stack-web-developer-nanodegree--nd004).
 
 ##Instructions:
-To utilize the application, you will need to install [PostgreSQL](http://www.postgresql.org/). Once installed, you can use the commands psql and \i tournament.sql from the directory in which you have downloaded the files to build the application’s database. Having now set up the database, you can use the commands contained in the python module to manipulate the database in your tournament.
+To utilize the application, you will need to install [PostgreSQL](http://www.postgresql.org/). Once installed, you can use the commands `psql` and `\i tournament.sql` from the directory in which you have downloaded the files to build the application’s database. Having now set up the database, you can use the commands contained in the python module to manipulate the database in your tournament.
 
-##Files Contained:
+##Files Needed to Run:
 * tournament.sql
 * tournament.py
 
