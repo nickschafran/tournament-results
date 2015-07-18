@@ -21,7 +21,7 @@ def deleteMatches():
     conn = connect()
     # Opens a cursor
     cur = conn.cursor()
-    query = "TRUNCATE FROM matches;"
+    query = "TRUNCATE matches CASCADE;"
     # Execute query from tournament.sql
     cur.execute(query)
     # Commit changes to database
@@ -35,7 +35,7 @@ def deletePlayers():
     """Remove all the player records from the database."""
     conn = connect()
     cur = conn.cursor()
-    query = "TRUNCATE FROM players;"
+    query = "TRUNCATE players CASCADE;"
     cur.execute(query)
     conn.commit()
     cur.close()
