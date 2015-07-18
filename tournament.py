@@ -21,7 +21,7 @@ def deleteMatches():
     conn = connect()
     # Opens a cursor
     cur = conn.cursor()
-    query = "delete from matches;"
+    query = "TRUNCATE FROM matches;"
     # Execute query from tournament.sql
     cur.execute(query)
     # Commit changes to database
@@ -35,7 +35,7 @@ def deletePlayers():
     """Remove all the player records from the database."""
     conn = connect()
     cur = conn.cursor()
-    query = "delete from players;"
+    query = "TRUNCATE FROM players;"
     cur.execute(query)
     conn.commit()
     cur.close()
@@ -46,7 +46,7 @@ def countPlayers():
     """Returns the number of players currently registered."""
     conn = connect()
     cur = conn.cursor()
-    query = "select count (*) as num from players;"
+    query = "SELECT COUNT (*) AS NUM FROM players;"
     cur.execute(query)
     return cur.fetchone()[0]
     cur.close()
@@ -63,7 +63,7 @@ def registerPlayer(name):
     """
     conn = connect()
     cur = conn.cursor()
-    query = "insert into players (name) values (%s)"
+    query = "INSERT INTO players (name) VALUES (%s)"
     param = (name,)
     cur.execute(query, param)
     conn.commit()
@@ -86,7 +86,7 @@ def playerStandings():
     """
     conn = connect()
     cur = conn.cursor()
-    query = "select * from standings;"
+    query = "SELECT * FROM standings;"
     cur.execute(query)
     return cur.fetchall()
     cur.close()
@@ -102,7 +102,7 @@ def reportMatch(winner, loser):
     """
     conn = connect()
     cur = conn.cursor()
-    query = "insert into matches (winner, loser) values (%s, %s)"
+    query = "INSERT INTO matches (winner, loser) VALUES (%s, %s)"
     param = (winner, loser)
     cur.execute(query, param)
     conn.commit()
