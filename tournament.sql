@@ -1,52 +1,55 @@
 /*
-tournament.sql 
-creates database and establishes schema for Swiss-sytem tournament
+
+tournament.sql -- creates db & establishes schema for Swiss-sytem tournament
+
+Author: Nicholas Schafran, July 2015
+
 */
 
 -- drop previously created tournament database
-drop database tournament;
+DROP DATABASE tournament;
 
--- create and connect to tournament database 
-create database tournament;
+-- create and connect to tournament database
+CREATE DATABASE tournament;
 \c tournament;
 
 -- create players table
-create table players (
-    id serial primary key, 
+CREATE TABLE players (
+    id serial PRIMARY KEY,
     name text
 );
 
 -- create matches table
-create table matches (
-    id serial primary key, 
-    winner serial references players(id),
-    loser serial references players(id)
+CREATE TABLE matches (
+    id serial PRIMARY KEY,
+    winner serial REFERENCES players(id),
+    loser serial REFERENCES players(id)
 );
 
  -- # of matches each player has played
-create view plays as
-    select players.id as id, count(matches.id) as played_games 
-    from players
-    left join matches
-    on players.id = matches.winner or players.id = matches.loser
-    group by players.id
-    order by played_games desc; 
+CREATE VIEW plays AS
+    SELECT players.id AS id, count(matches.id) AS played_games
+    FROM players
+    LEFT JOIN matches
+    ON players.id = matches.winner OR players.id = matches.loser
+    GROUP BY players.id
+    ORDER BY played_games DESC;
 
 -- # of matches each player has won
-create view wins as
-    select players.id as id, count(matches.winner) as won_games
-    from players
-    left join matches
-    on players.id = matches.winner
-    group by players.id
-    order by won_games desc; 
+CREATE VIEW wins AS
+    SELECT players.id AS id, count(matches.winner) AS won_games
+    FROM players
+    LEFT JOIN matches
+    ON players.id = matches.winner
+    GROUP BY players.id
+    ORDER BY won_games DESC;
 
 -- view of player standings
-create view standings as
-    select players.id as id, players.name as name, won_games as wins, 
-    played_games as matches 
-    from players 
-    left join wins on players.id = wins.id 
-    left join plays on players.id = plays.id
-    order by wins desc;
+CREATE VIEW standings AS
+    SELECT players.id AS id, players.name AS name, won_games AS wins,
+    played_games AS matches
+    FROM players
+    LEFT JOIN wins ON players.id = wins.id
+    LEFT JOIN plays ON players.id = plays.id
+    ORDER BY wins DESC;
     
