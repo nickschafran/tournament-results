@@ -2,6 +2,9 @@
 #
 # tournament.py -- implementation of a Swiss-system tournament
 #
+# Nicholas Schafran
+#
+# July 2015
 
 
 import psycopg2
@@ -14,13 +17,13 @@ def connect():
 
 def deleteMatches():
     """Remove all the match records from the database."""
+    # Connect to database
     conn = connect()
     # Opens a cursor
     cur = conn.cursor()
+    query = "delete from matches;"
     # Execute query from tournament.sql
-    cur.execute(
-        "delete from matches;"
-        )
+    cur.execute(query)
     # Commit changes to database
     conn.commit()
     # Close cursor and connection
@@ -32,9 +35,8 @@ def deletePlayers():
     """Remove all the player records from the database."""
     conn = connect()
     cur = conn.cursor()
-    cur.execute(
-        "delete from players;"
-        )
+    query = "delete from players;"
+    cur.execute(query)
     conn.commit()
     cur.close()
     conn.close()
@@ -44,9 +46,8 @@ def countPlayers():
     """Returns the number of players currently registered."""
     conn = connect()
     cur = conn.cursor()
-    cur.execute(
-        "select count (*) as num from players;"
-        )
+    query = "select count (*) as num from players;"
+    cur.execute(query)
     return cur.fetchone()[0]
     cur.close()
     conn.close()
@@ -55,17 +56,16 @@ def countPlayers():
 def registerPlayer(name):
     """Adds a player to the tournament database.
 
-    The database assigns a unique serial id number for the player.  (This
-    should be handled by your SQL database schema, not in your Python code.)
+    The database assigns a unique serial id number for the player.
 
     Args:
       name: the player's full name (need not be unique).
     """
     conn = connect()
     cur = conn.cursor()
-    cur.execute(
-        "insert into players (name) values (%s)", (name,)
-        )
+    query = "insert into players (name) values (%s)"
+    param = (name,)
+    cur.execute(query, param)
     conn.commit()
     cur.close()
     conn.close()
@@ -86,9 +86,8 @@ def playerStandings():
     """
     conn = connect()
     cur = conn.cursor()
-    cur.execute(
-        "select * from standings;"
-        )
+    query = "select * from standings;"
+    cur.execute(query)
     return cur.fetchall()
     cur.close()
     conn.close()
@@ -103,9 +102,9 @@ def reportMatch(winner, loser):
     """
     conn = connect()
     cur = conn.cursor()
-    cur.execute(
-        "insert into matches (winner, loser) values (%s, %s)", (winner, loser)
-        )
+    query = "insert into matches (winner, loser) values (%s, %s)"
+    param = (winner, loser)
+    cur.execute(query, param)
     conn.commit()
     conn.close()
 
@@ -133,4 +132,3 @@ def swissPairings():
     pairings = [(even[0], even[1], odd[0], odd[1]) 
                 for even, odd in list(zipped)]
     return pairings
-
