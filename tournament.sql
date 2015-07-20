@@ -5,7 +5,7 @@ Author: Nicholas Schafran, July 2015
 */
 
 -- drop previously created tournament database
-DROP DATABASE tournament;
+DROP DATABASE tournament IF EXISTS;
 
 -- create and connect to tournament database
 CREATE DATABASE tournament;
