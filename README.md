@@ -8,7 +8,7 @@ To utilize the application, you will need to install [PostgreSQL](http://www.pos
 * tournament.sql
 * tournament.py
 
-##Citations:
+##References:
 * Psycopg module usage tips taken from [Psycopg 2.6.1 documentation](http://initd.org/psycopg/docs/usage.html#passing-parameters-to-sql-queries)
 
 * tournament.sql schema took inspiration from [SQL: Using Views to Make Complex Queries Manageable](https://plus.google.com/u/0/events/cs0lddl0stv1mjk4a5kruslmsmg)
