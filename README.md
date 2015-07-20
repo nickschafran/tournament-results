@@ -22,4 +22,3 @@ To utilize the application, you will need to install [PostgreSQL](http://www.pos
   * Used suggestion from [Tournament Results: Getting Started](https://docs.google.com/a/knowlabs.com/document/d/16IgOm4XprTaKxAa8w02y028oBECOoB1EI1ReddADEeY/pub?embedded=true)
   * Python Documentation on [Zip](https://docs.python.org/2/library/functions.html#zip)
   * http://stackoverflow.com/a/24844077
-
