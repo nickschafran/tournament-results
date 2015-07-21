@@ -11,14 +11,11 @@ You will need to have installed [PostgreSQL](http://www.postgresql.org/) to util
 ##References:
 * Psycopg module usage tips taken from [Psycopg 2.6.1 documentation](http://initd.org/psycopg/docs/usage.html#passing-parameters-to-sql-queries)
 
-* tournament.sql schema took inspiration from [SQL: Using Views to Make Complex Queries Manageable](https://plus.google.com/u/0/events/cs0lddl0stv1mjk4a5kruslmsmg)
-
 * Odd and even list sampling on swissPairings():
   * http://stackoverflow.com/a/11702449
   * http://stackoverflow.com/a/756602
   * https://docs.python.org/2.3/whatsnew/section-slices.html
 
 * Zip function on swissPairings():
-  * Used suggestion from [Tournament Results: Getting Started](https://docs.google.com/a/knowlabs.com/document/d/16IgOm4XprTaKxAa8w02y028oBECOoB1EI1ReddADEeY/pub?embedded=true)
   * Python Documentation on [Zip](https://docs.python.org/2/library/functions.html#zip)
   * http://stackoverflow.com/a/24844077
