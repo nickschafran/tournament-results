@@ -22,8 +22,8 @@ def deleteMatches():
     """Remove all the match records from the database."""
     # Connect to database, open a cursor
     db, cur = connect()
-    query = "TRUNCATE matches CASCADE;"
     # Execute query from tournament.sql
+    query = "TRUNCATE matches CASCADE;"
     cur.execute(query)
     # Commit changes to database
     db.commit()
