@@ -12,7 +12,7 @@ You will need to have installed [PostgreSQL](http://www.postgresql.org/) to util
 * Psycopg module usage tips taken from [Psycopg 2.6.1 documentation](http://initd.org/psycopg/docs/usage.html#passing-parameters-to-sql-queries)
 
 * Odd and even list sampling on swissPairings():
-  * Python documentation on [Extended Slices]https://docs.python.org/2.3/whatsnew/section-slices.html
+  * Python documentation on [Extended Slices](https://docs.python.org/2.3/whatsnew/section-slices.html)
   * http://stackoverflow.com/a/11702449
   * http://stackoverflow.com/a/756602
 
