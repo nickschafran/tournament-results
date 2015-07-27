@@ -4,7 +4,7 @@ This repository contains a PostgreSQL database schema and python module utilizin
 ##Instructions:
 You will need to have installed [PostgreSQL](http://www.postgresql.org/) to utilize the application. Once installed, you can use the terminal command `psql -f tournament.sql` from the directory in which you have downloaded the files to build the application’s database. Having now set up the database, you can use the methods contained in the tournament.py module to manipulate the database in your tournament.
 
-##Files Needed to Run:
+##Files Included:
 * tournament.sql
 * tournament.py
 
